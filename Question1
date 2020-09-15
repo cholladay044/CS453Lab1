@@ -1,0 +1,32 @@
+def inputToList():
+        list = []
+        val = ""
+        while val != "quit":
+            val = input("Enter a number to the list or 'quit' to stop: ")
+            try:
+                num = int(val)
+                list.append(num)
+            except ValueError:
+                return list
+
+def splitList(originalList, negativeList, positiveList):
+    for i in originalList:
+        try:
+            if i < 0:
+                negativeList.append(i)
+            else:
+                positiveList.append(i)
+        except:
+            print(i, " is not a valid number")
+            
+def main():
+    negativeList = []
+    positiveList = []
+    list = inputToList()
+    
+    splitList(list, negativeList, positiveList)
+ 
+    print(negativeList)
+    print(positiveList)
+if __name__ == "__main__":
+    main()
