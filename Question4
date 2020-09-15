@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep  3 22:36:21 2020
+
+@author: Cole
+"""
+def splitList(originalList, list1, list2):
+    for i in originalList:
+        if originalList.index(i) % 2 == 0:
+            list1.append(i)
+        else:
+            list2.append(i)
+
+def addToDict(list1, list2):
+    dictionary = {}
+    for i in list1:
+        dictionary.update({ i : list2[list1.index(i)]})
+    return dictionary
+def main():
+
+   list = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n'] 
+   list1 = []
+   list2 = []
+   splitList(list, list1, list2)
+   dictonary = addToDict(list1, list2)
+   print(dictonary)
+   
+   
+if __name__ == "__main__":
+    main()
