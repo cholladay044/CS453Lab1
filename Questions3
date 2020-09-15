@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep  3 22:26:14 2020
+
+@author: Cole
+"""
+def compareLists(list1, list2):
+    results = []
+    for i in list1:
+        for j in list2:
+            if i == j:
+                results.append(i)
+    return results
+def main():
+
+    list1 = [0,2,7,9,1,3] 
+    list2 = [4,5,6,0,1,7]
+    print(list1)
+    print(list2)
+    print("Common members: ", compareLists(list1, list2))
+
+if __name__ == "__main__":
+    main()
