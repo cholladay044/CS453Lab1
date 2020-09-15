@@ -1,0 +1,21 @@
+def palindrome(list):
+    size = 0
+    for i in list:
+        """
+        Line 13 can be referenced on 
+        https://www.geeksforgeeks.org/reverse-string-python-5-different-ways/
+        """
+        reverse = i[:: -1]
+        if len(i) >= 2 and i == reverse:
+            size += 1
+    
+    return size
+    
+def main():
+    
+    list = ["racecar", "t", "aa", "madam", "java"]
+    print(list)
+    print("Number of palindromes: ",palindrome(list))
+    
+if __name__ == "__main__":
+    main()
