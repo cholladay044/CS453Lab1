@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep  4 08:17:30 2020
+
+@author: Cole
+"""
+
+"""
+Line 13 reference:
+https://www.educative.io/edpresso/how-to-check-if-a-key-exists-in-a-python-dictionary
+"""
+def findValue(dict, key):
+    if key in dict:
+        return True
+    else:
+        return False
+    
+def sort(dict, key):
+    list = []
+    if findValue(dict, key):
+        list = dict[key]
+        dict[key] = sorted(list)
+    else:
+        print('Key not found in dictionary')
+        
+def removeItem(dict, key, item):
+    list = []
+    if findValue(dict, key):
+        list = dict[key]
+        list.remove(item)
+        dict[key] = list
+
+def addToExistingNumber(dict, key):
+    num = 0
+    if findValue(dict, key):
+        num = dict[key]
+        num += 8
+        dict[key] = num
+        
+def main():
+
+    storage = {
+        'computer': 80,
+        'furniture' : ['chair', 'table', 'bench'],
+        'clothes' : ['shirt', 'jacket', 'vest', 'cotten sweater']
+        }    
+    print("Original Dictionary: ", storage, '\n')
+    
+    storage.update( {'shoes' : ['sneaker', 'winter sleeper', 'bloc']})
+    print("Updated Dictionary: ", storage, '\n')
+    
+    sort(storage, 'clothes')
+    print("Sorted, updated Dictionary", storage, '\n')
+    
+    removeItem(storage, 'clothes', 'shirt')
+    print("Updated Dictionary with shirt removed from list: ", storage, '\n')
+    
+    addToExistingNumber(storage, 'computer')
+    print("Updated 'Computer' value found in dictionary: ", storage)
+    
+if __name__ == "__main__":
+    main()
