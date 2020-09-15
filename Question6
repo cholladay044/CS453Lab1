@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep  4 09:09:24 2020
+
+@author: Cole
+"""
+
+def removeTupleFromList(tuple, list):
+    for i in list:
+        if i == tuple:
+            list.remove(i)
+
+def main():
+    
+    tuple1 = (4, 5)
+    print("First tuple", tuple1, '\n')
+    tuple2 = (7, 4)
+    print("Second tuple", tuple2, '\n')
+    tuple3 = (10, 0)
+    print("Third tuple", tuple3, '\n')
+    
+    
+    listOfTuples = [(0, 2), (7, 4), (3, 8), (2, 1), (10, 0), (4, 5), (6, 3)]
+    print("Original List of tuples: ", listOfTuples, '\n')
+    
+    removeTupleFromList(tuple1, listOfTuples)
+    removeTupleFromList(tuple2, listOfTuples)
+    removeTupleFromList(tuple3, listOfTuples)
+    
+    print("Updated list after removing tuples: ", listOfTuples)
+    
+if __name__ == "__main__":
+    main()
